@@ -1,0 +1,20 @@
+name: 'Cache'
+description: 'Cache artifacts like dependencies and build outputs to improve workflow execution time'
+author: 'GitHub'
+inputs:
+  local_path:
+    description: 'A directory to store and save the cache'
+    required: true
+  cache_path:
+    description: 'A local directory to store and save the cache'
+    required: true
+outputs:
+  cache-hit:
+    description: 'A boolean value to indicate an exact match was found for the primary key'
+runs:
+  main: mkdir -p $CACHE_PATH && mkdir -p $LOCAL_PATH && cp -rf $CACHE_PATH/ $LOCAL_PATH/
+  post: cp -rf $LOCAL_PATH/ $CACHE_PATH/
+  post-if: 'success()'
+branding:
+  icon: 'archive'
+  color: 'gray-dark'
