@@ -12,8 +12,8 @@ outputs:
   cache-hit:
     description: 'A boolean value to indicate an exact match was found for the primary key'
 runs:
-  main: mkdir -p $CACHE_PATH && mkdir -p $LOCAL_PATH && cp -rf $CACHE_PATH/ $LOCAL_PATH/
-  post: cp -rf $LOCAL_PATH/ $CACHE_PATH/
+  main: 'mkdir -p $CACHE_PATH && mkdir -p $LOCAL_PATH && cp -rf $CACHE_PATH/ $LOCAL_PATH/'
+  post: 'cp -rf $LOCAL_PATH/ $CACHE_PATH/'
   post-if: 'success()'
 branding:
   icon: 'archive'
