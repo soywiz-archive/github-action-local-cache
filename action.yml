@@ -8,8 +8,8 @@ inputs:
     required: true
 runs:
   using: 'node12'
-  main: 'mkdir -p $CACHE_PATH && mkdir -p $LOCAL_PATH && cp -rf $CACHE_PATH/ $LOCAL_PATH/'
-  post: 'cp -rf $LOCAL_PATH/ $CACHE_PATH/'
+  main: main.js
+  post: post.js
   post-if: 'success()'
 branding:
   icon: 'archive'
