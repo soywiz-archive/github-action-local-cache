@@ -7,6 +7,7 @@ inputs:
     description: 'A local directory to store and save the cache'
     required: true
 runs:
+  using: 'node12'
   main: 'mkdir -p $CACHE_PATH && mkdir -p $LOCAL_PATH && cp -rf $CACHE_PATH/ $LOCAL_PATH/'
   post: 'cp -rf $LOCAL_PATH/ $CACHE_PATH/'
   post-if: 'success()'
