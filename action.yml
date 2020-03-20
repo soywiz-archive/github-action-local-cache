@@ -9,8 +9,8 @@ inputs:
 runs:
   using: 'node12'
   main: main.js
-  post: post.js
-  post-if: 'success()'
+  #post: post.js
+  #post-if: 'success()'
 branding:
   icon: 'archive'
   color: 'gray-dark'
